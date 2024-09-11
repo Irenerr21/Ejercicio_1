@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Datos Personales</title>
+    <link rel="stylesheet" href="formulario.css">
+    
+    <script>
+        function updateMunicipios() {
+            const estadosMunicipios = {
+                "Aguascalientes": ["Aguascalientes"],
+                "Baja California": ["Mexicali", "Tijuana"],
+                "Baja California Sur": ["La Paz", "Cabo San Lucas"],
+                "Campeche": ["Campeche", "Ciudad del Carmen"],
+                "Chiapas": ["Tuxtla Gutiérrez", "San Cristóbal de las Casas"],
+                "Chihuahua": ["Chihuahua", "Ciudad Juárez"],
+                "Coahuila": ["Saltillo", "Torreón"],
+                "Colima": ["Colima", "Manzanillo"],
+                "Durango": ["Durango", "Gómez Palacio"],
+                "Guanajuato": ["Guanajuato", "León"],
+                "Guerrero": ["Acapulco", "Chilpancingo"],
+                "Hidalgo": ["Pachuca", "Tula"],
+                "Jalisco": ["Guadalajara", "Puerto Vallarta", "Tlaquepaque", "Zapopan", "Tlajomulco de Zúñiga"],
+                "Mexico": ["Toluca", "Ecatepec", "Nezahualcóyotl", "Tlalnepantla", "Naucalpan"],
+                "Mexico City": ["Álvaro Obregón", "Coyoacán", "Iztapalapa", "Miguel Hidalgo", "Cuauhtémoc"],
+                "Michoacán": ["Morelia", "Uruapan"],
+                "Morelos": ["Cuernavaca", "Jiutepec"],
+                "Nayarit": ["Tepic", "Bahía de Banderas"],
+                "Nuevo León": ["Monterrey", "San Pedro Garza García", "Santa Catarina", "Apodaca", "General Escobedo"],
+                "Oaxaca": ["Oaxaca", "Juchitán"],
+                "Puebla": ["Puebla", "Tehuacán", "San Andrés Cholula", "San Pedro Cholula", "Atlixco"],
+                "Querétaro": ["Querétaro", "El Marqués", "San Juan del Río", "El Pueblito", "Cadereyta de Montes"],
+                "Quintana Roo": ["Cancún", "Playa del Carmen"],
+                "San Luis Potosí": ["San Luis Potosí", "Soledad de Graciano Sánchez"],
+                "Sinaloa": ["Culiacán", "Mazatlán"],
+                "Sonora": ["Hermosillo", "Nogales"],
+                "Tabasco": ["Villahermosa", "Cárdenas"],
+                "Tamaulipas": ["Reynosa", "Matamoros"],
+                "Tlaxcala": ["Tlaxcala", "Apizaco"],
+                "Veracruz": ["Veracruz", "Xalapa"],
+                "Yucatán": ["Mérida", "Valladolid", "Tizimin", "Progreso", "Hunucmá"],
+                "Zacatecas": ["Zacatecas", "Guadalupe"]
+            };
+
+
+            const estadoSelect = document.getElementById('estado');
+            const municipioSelect = document.getElementById('municipio');
+            
+            const selectedEstado = estadoSelect.value;
+            const municipios = estadosMunicipios[selectedEstado] || [];
+            
+            municipioSelect.innerHTML = '<option value="">Selecciona un municipio</option>';
+            
+            municipios.forEach(municipio => {
+                const option = document.createElement('option');
+                option.value = municipio;
+                option.textContent = municipio;
+                municipioSelect.appendChild(option);
+            });
+        }
+    </script>
+</head>
+<body>
+    
+
+    <form action="#" method="post">
+        <h1>Formulario de Datos</h1>
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="apellidoP">Apellido Paterno:</label>
+            <input type="text" id="apellidoP" name="apellidoP" required>
+        </div>
+
+        <div class="form-group">
+            <label for="apellidoM">Apellido Materno:</label>
+            <input type="text" id="apellidoM" name="apellidoM" required>
+        </div>
+
+        <div class="form-group">
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" min="0" max="120" required>
+        </div>
+
+        <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+        </div>
+
+        <div class="form-group">
+            <label for="estado">Entidad Federativa:</label>
+            <select id="estado" name="estado" onchange="updateMunicipios()" required>
+                <option value="">Selecciona un estado</option>
+                <option value="Aguascalientes">Aguascalientes</option>
+                <option value="Baja California">Baja California</option>
+                <option value="Baja California Sur">Baja California Sur</option>
+                <option value="Campeche">Campeche</option>
+                <option value="Chiapas">Chiapas</option>
+                <option value="Chihuahua">Chihuahua</option>
+                <option value="Coahuila">Coahuila</option>
+                <option value="Colima">Colima</option>
+                <option value="Durango">Durango</option>
+                <option value="Guanajuato">Guanajuato</option>
+                <option value="Guerrero">Guerrero</option>
+                <option value="Hidalgo">Hidalgo</option>
+                <option value="Jalisco">Jalisco</option>
+                <option value="Mexico">Estado de México</option>
+                <option value="Mexico City">Ciudad de México</option>
+                <option value="Michoacán">Michoacán</option>
+                <option value="Morelos">Morelos</option>
+                <option value="Nayarit">Nayarit</option>
+                <option value="Nuevo León">Nuevo León</option>
+                <option value="Oaxaca">Oaxaca</option>
+                <option value="Puebla">Puebla</option>
+                <option value="Querétaro">Querétaro</option>
+                <option value="Quintana Roo">Quintana Roo</option>
+                <option value="San Luis Potosí">San Luis Potosí</option>
+                <option value="Sinaloa">Sinaloa</option>
+                <option value="Sonora">Sonora</option>
+                <option value="Tabasco">Tabasco</option>
+                <option value="Tamaulipas">Tamaulipas</option>
+                <option value="Tlaxcala">Tlaxcala</option>
+                <option value="Veracruz">Veracruz</option>
+                <option value="Yucatán">Yucatán</option>
+                <option value="Zacatecas">Zacatecas</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="municipio">Municipio:</label>
+            <select id="municipio" name="municipio" required>
+                <option value="">Selecciona un municipio</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <span>Género:</span>
+            <div class="radio-group">
+                <label><input type="radio" name="genero" value="Masculino" required> Masculino</label>
+                <label><input type="radio" name="genero" value="Femenino" required> Femenino</label>
+                <label><input type="radio" name="genero" value="Otro" required> Otro</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span>Pasatiempos:</span>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="pasatiempos" value="Leer"> Leer</label>
+                <label><input type="checkbox" name="pasatiempos" value="Deportes"> Deportes</label>
+                <label><input type="checkbox" name="pasatiempos" value="Cine"> Cine</label>
+                <label><input type="checkbox" name="pasatiempos" value="Música"> Música</label>
+                <label><input type="checkbox" name="pasatiempos" value="Viajar"> Viajar</label>
+                <label><input type="checkbox" name="pasatiempos" value="Videojuegos"> Videojuegos</label>
+                
+            </div>
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

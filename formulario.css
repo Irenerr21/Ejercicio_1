@@ -1,0 +1,104 @@
+/* Estilo general del cuerpo del documento */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Estilo del contenedor del formulario */
+form {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Estilo de los títulos del formulario */
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo de los grupos de campos */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Estilo de las etiquetas */
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Estilo de los inputs de texto, textarea y select */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilo de los inputs de texto para dirección */
+.form-group input[type="text"]#direccion {
+    height: 100px;
+}
+
+/* Estilo de los botones */
+button[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+/* Estilo de los botones al pasar el cursor */
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Estilo de los grupos de opciones de radio y checkbox */
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Estilo de los labels dentro de los grupos de opciones */
+.radio-group label,
+.checkbox-group label {
+    margin-right: 15px;
+    margin-bottom: 10px;
+    font-weight: normal;
+    color: #333;
+}
+
+/* Espaciado entre los campos de formulario */
+.form-group span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
